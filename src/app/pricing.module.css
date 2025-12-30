@@ -1,0 +1,111 @@
+/* Pricing Section */
+.pricing {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: linear-gradient(135deg, #F5F7FA 0%, #E3F2FD 100%);
+    text-align: center;
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricingCard {
+    background: var(--surface);
+    padding: var(--spacing-lg) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricingCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricingCard.pro {
+    border: 2px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricingCard.pro::before {
+    content: "RECOMMENDED";
+    position: absolute;
+    top: 12px;
+    right: -30px;
+    background: var(--accent);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+}
+
+.priceTitle {
+    font-family: var(--font-outfit);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.priceAmount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.priceAmount span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.featureList {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.featureList li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pricingBtn {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.8rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.pricingBtn:hover {
+    background: #E8EAF6;
+}
+
+.pricingBtn.primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+}
+
+.pricingBtn.primary:hover {
+    background: var(--primary-light);
+    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2);
+}

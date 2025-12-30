@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dhan-Raashi 🇮🇳💰
 
-## Getting Started
+> **"Paisa bachega, toh life banega."**
 
-First, run the development server:
+**Dhan-Raashi** is an expert financial control app tailored for the **Indian wallet**. It helps users track cash & UPI transactions, plan for festivals, and manage variable incomes, all while keeping data strictly **on-device** for maximum privacy.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **⚡ Chai-Sutta Tracking**: Quick-add widget for fast, zero-lag manual entries. Works on 2G/Offline.
+- **🤖 Chat-like Interface**: Log expenses as easily as sending a WhatsApp message (e.g., "20 chai", "150 auto").
+- **🛑 Festival Shield**: Protect your savings from big sales and weddings. "Diwali Budget Locked!" alerts.
+- **📊 Variable Income View**: Perfect for freelancers and gig workers. Toggle between "Daily View" and "Monthly View".
+- **🔒 Privacy First**: No data selling. All financial data stays on your phone.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Directory)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: CSS Modules (Zero runtime overhead)
+- **Bundler**: Turbopack
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clone the repository:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    git clone https://github.com/yourusername/dhan-raashi-web.git
+    cd dhan-raashi-web
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Install dependencies:**
 
-## Deploy on Vercel
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Run the development server:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open locally:**
+    Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
