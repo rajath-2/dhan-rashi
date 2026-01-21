@@ -114,6 +114,7 @@
     background: #E3F2FD;
     border-color: var(--primary-light);
 }
+
 .emojiBtnSelected {
     transform: scale(1.1);
     background: #E3F2FD;

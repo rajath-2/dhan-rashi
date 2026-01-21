@@ -16,7 +16,7 @@ interface Transaction {
 export default function Dashboard() {
   const [variableIncome, setVariableIncome] = useState(false);
   const [balance, setBalance] = useState(12450);
-  
+
   // Transaction State
   const [transactions, setTransactions] = useState<Transaction[]>([
     { id: 1, name: "Chai Point", time: "10:30 AM", amount: 20, type: "debit", icon: "☕" },
@@ -46,14 +46,14 @@ export default function Dashboard() {
 
     setTransactions([newTx, ...transactions]);
     setBalance(prev => prev - val);
-    
+
     // Reset
     setAmount("");
     setDesc("");
   };
 
   const getIconForCategory = (cat: string) => {
-    switch(cat) {
+    switch (cat) {
       case 'Food': return '🍲';
       case 'Travel': return '🛺';
       case 'Bills': return '💡';
@@ -79,13 +79,13 @@ export default function Dashboard() {
       <div className={styles.shield}>
         <span className={styles.shieldIcon}>🛡️</span>
         <div className={styles.shieldText}>
-          <strong>Festival Shield Active</strong><br/>
+          <strong>Festival Shield Active</strong><br />
           Diwali Budget is locked. ₹5,000 saved for gifts!
         </div>
       </div>
 
       <div className={styles.mainGrid}>
-        
+
         {/* Balance Card */}
         <div className={styles.balanceCard}>
           <div className={styles.balanceLabel}>Current Balance</div>
@@ -103,15 +103,15 @@ export default function Dashboard() {
           <form onSubmit={handleAddExpense} className={styles.formGrid}>
             <div className={styles.formRow}>
               <label className={styles.inputLabel}>Amount (₹)</label>
-              <input 
-                type="number" 
-                className={styles.input} 
-                placeholder="e.g. 50" 
+              <input
+                type="number"
+                className={styles.input}
+                placeholder="e.g. 50"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />
             </div>
-            
+
             <div className={styles.formRow}>
               <label className={styles.inputLabel}>Category</label>
               <select className={styles.select} value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -124,10 +124,10 @@ export default function Dashboard() {
 
             <div className={styles.formRow}>
               <label className={styles.inputLabel}>Description</label>
-              <input 
-                type="text" 
-                className={styles.input} 
-                placeholder="e.g. Morning Chai" 
+              <input
+                type="text"
+                className={styles.input}
+                placeholder="e.g. Morning Chai"
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
               />

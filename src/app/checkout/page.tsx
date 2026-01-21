@@ -17,17 +17,17 @@ export default function CheckoutPage() {
 
   // Coupon State
   const [coupon, setCoupon] = useState("");
-  const [appliedCoupon, setAppliedCoupon] = useState<{code: string, percent: number} | null>(null);
+  const [appliedCoupon, setAppliedCoupon] = useState<{ code: string, percent: number } | null>(null);
   const [couponError, setCouponError] = useState("");
 
   const BASE_PRICE = 99;
-  
+
   const handleApplyCoupon = () => {
     setCouponError("");
     const code = coupon.toUpperCase().trim();
-    
+
     if (!code) return;
-    
+
     if (COUPONS[code]) {
       setAppliedCoupon({ code: code, percent: COUPONS[code] });
       setCoupon(""); // clear input on success/applied
@@ -42,7 +42,7 @@ export default function CheckoutPage() {
     const subTotal = BASE_PRICE - discountAmount;
     const gst = subTotal * 0.18;
     const total = subTotal + gst;
-    
+
     return {
       discountAmount,
       subTotal,
@@ -61,7 +61,7 @@ export default function CheckoutPage() {
       setSuccess(true);
     }, 2000);
   };
-  
+
   if (success) {
     return (
       <div className={styles.container}>
@@ -86,7 +86,7 @@ export default function CheckoutPage() {
   return (
     <div className={styles.container}>
       <div className={styles.checkoutCard}>
-        
+
         {/* Header */}
         <div className={styles.header}>
           <div>
@@ -98,30 +98,30 @@ export default function CheckoutPage() {
 
         {/* Body */}
         <div className={styles.body}>
-          
+
           {/* Coupon Section */}
           <div className={styles.couponSection}>
-             <label style={{fontSize: '0.85rem', fontWeight: 600}}>Have a Coupon?</label>
-             <div className={styles.couponInputGroup}>
-               <input 
-                 type="text" 
-                 className={styles.couponInput} 
-                 placeholder="Enter Code"
-                 value={coupon}
-                 onChange={(e) => setCoupon(e.target.value)}
-               />
-               <button className={styles.applyBtn} onClick={handleApplyCoupon}>Apply</button>
-             </div>
-             {couponError && (
-               <div className={`${styles.couponMessage} ${styles.couponError}`}>
-                 ⚠️ {couponError}
-               </div>
-             )}
-             {appliedCoupon && (
-                <div className={`${styles.couponMessage} ${styles.couponSuccess}`}>
-                  ✅ Code <strong>{appliedCoupon.code}</strong> applied! ({appliedCoupon.percent}% Off)
-                </div>
-             )}
+            <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Have a Coupon?</label>
+            <div className={styles.couponInputGroup}>
+              <input
+                type="text"
+                className={styles.couponInput}
+                placeholder="Enter Code"
+                value={coupon}
+                onChange={(e) => setCoupon(e.target.value)}
+              />
+              <button className={styles.applyBtn} onClick={handleApplyCoupon}>Apply</button>
+            </div>
+            {couponError && (
+              <div className={`${styles.couponMessage} ${styles.couponError}`}>
+                ⚠️ {couponError}
+              </div>
+            )}
+            {appliedCoupon && (
+              <div className={`${styles.couponMessage} ${styles.couponSuccess}`}>
+                ✅ Code <strong>{appliedCoupon.code}</strong> applied! ({appliedCoupon.percent}% Off)
+              </div>
+            )}
           </div>
 
           <div className={styles.summary}>
@@ -129,7 +129,7 @@ export default function CheckoutPage() {
               <span>Subtotal</span>
               <span>₹{BASE_PRICE}</span>
             </div>
-            
+
             {appliedCoupon && (
               <div className={`${styles.summaryRow} ${styles.discountRow}`}>
                 <span>Discount ({appliedCoupon.percent}%)</span>
@@ -149,23 +149,23 @@ export default function CheckoutPage() {
 
           <div style={{ marginBottom: "0.5rem", fontWeight: "600", fontSize: "0.9rem" }}>Select Payment Method</div>
           <div className={styles.paymentMethods}>
-            <div 
+            <div
               className={`${styles.method} ${method === 'upi' ? styles.selected : ''}`}
               onClick={() => setMethod('upi')}
             >
               <span className={styles.methodIcon}>📱</span>
               <span className={styles.methodName}>UPI / QR</span>
             </div>
-            
-            <div 
+
+            <div
               className={`${styles.method} ${method === 'card' ? styles.selected : ''}`}
               onClick={() => setMethod('card')}
             >
               <span className={styles.methodIcon}>💳</span>
               <span className={styles.methodName}>Credit / Debit Card</span>
             </div>
-            
-            <div 
+
+            <div
               className={`${styles.method} ${method === 'netbanking' ? styles.selected : ''}`}
               onClick={() => setMethod('netbanking')}
             >
@@ -174,9 +174,9 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          <button 
-            className={styles.payButton} 
-            onClick={handlePayment} 
+          <button
+            className={styles.payButton}
+            onClick={handlePayment}
             disabled={processing}
           >
             {processing ? "Processing..." : `Pay ₹${total.toFixed(2)}`}

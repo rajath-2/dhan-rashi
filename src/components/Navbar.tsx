@@ -12,22 +12,22 @@ export default function Navbar() {
       <Link href="/" className={styles.logo}>
         <span>₹</span> Dhan-Raashi
       </Link>
-      
+
       <div className={styles.navLinks}>
         <Link href="/" className={`${styles.link} ${pathname === '/' ? styles.active : ''}`}>
           Home
         </Link>
         <Link href="/dashboard" className={`${styles.link} ${pathname === '/dashboard' ? styles.active : ''}`}>
-           Dashboard
+          Dashboard
         </Link>
         <Link href="/feedback" className={`${styles.link} ${pathname === '/feedback' ? styles.active : ''}`}>
-           Feedback
+          Feedback
         </Link>
-        
+
         {pathname !== '/dashboard' && (
-             <Link href="/dashboard" className={styles.cta}>
-                Try Demo
-            </Link>
+          <Link href="/dashboard" className={styles.cta}>
+            Try Demo
+          </Link>
         )}
       </div>
     </nav>
