@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dhan-Raashi 🇮🇳💰
 
-## Getting Started
+> **Paisa bachega, toh life banega.**
 
-First, run the development server:
+**Dhan-Raashi** is an expert financial control app designed specifically for the Indian wallet. It helps you track cash & UPI expenses, plan for big Indian festivals, and build your "Musibat Fund" (Emergency Fund) with ease.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Built for the real India—works on 2G, fully offline capability, and respects your privacy.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🚀 Track Fast. Like WhatsApp.
+No more complex forms or SMS parsing errors. Just tap and type.
+- **"Chai 20" Quick Add**: Log expenses as fast as you order chai.
+- **Zero-Lag**: optimized for low-end devices.
+- **Offline First**: Works perfectly on 2G or without internet.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🛑 "Log Kya Kahenge?" Protection
+Protect your savings from social pressure and big Indian weddings.
+- **Festival Shield**: Locks your budget during Diwali and other sales.
+- **Shagun Tracking**: Keep track of gifts given and received.
+- **EMI Truth Serum**: See the real cost of "No Cost EMI" schemes.
 
-## Learn More
+### 💼 Freelancer & Gig Friendly
+Salary doesn't always come on the 1st? We get it.
+- **Daily View**: Track "Good Days" vs "Bad Days" for variable income.
+- **Rainy Day Buffer**: Smart logic to save for lean periods.
+- **Business vs Personal**: Separate expenses easily.
 
-To learn more about Next.js, take a look at the following resources:
+### 🔒 Privacy First & Trust
+- **No Data Selling**: We don't sell your data to banks or loan apps.
+- **On-Device Storage**: Your financial data stays on your phone.
+- **Made for India**: Locally hosted server for speed and compliance.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🗣️ Feedback System
+We value user input to make Dhan-Raashi better.
+- **Submit Feedback**: Users can rate their experience and suggest features via the `/feedback` page.
+- **Transparent**: Feedback is stored securely in a local CSV file (`feedback.csv`) for the dev team to review.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Directory)
+- **Language**: TypeScript
+- **Styling**: CSS Modules (Zero runtime overhead)
+- **Font**: Geist (Optimized for web)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites
+- Node.js 18.17 or later
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/dhan-raashi-web.git
+    cd dhan-raashi-web
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

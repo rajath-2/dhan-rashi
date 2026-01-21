@@ -1,0 +1,133 @@
+/* Feature Grid Layout */
+.featureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featureSection {
+    padding: 4rem var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.featureSection:nth-child(even) {
+    flex-direction: row-reverse;
+    background: white;
+}
+
+.featureSection:nth-child(odd) {
+    background: #F8F9FA;
+}
+
+.featureContent {
+    flex: 1;
+    max-width: 500px;
+}
+
+.featureTitle {
+    font-family: var(--font-outfit);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.featureDesc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.featureVisual {
+    flex: 1;
+    max-width: 500px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* Chat Input Visual */
+.chatVisual {
+    padding: 2rem;
+    background: #ECE5DD;
+    /* WhatsApp-like bg */
+}
+
+.chatBubble {
+    background: white;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    border-top-left-radius: 0;
+    margin-bottom: 1rem;
+    max-width: 80%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.chatBubble.user {
+    background: #DCF8C6;
+    margin-left: auto;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0;
+}
+
+/* Festival Visual */
+.festivalVisual {
+    background: linear-gradient(135deg, #FF9800 10%, #FF5722 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.festivalIcon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Trust Badges */
+.trustGrid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.trustBadge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+    .featureSection {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .featureSection:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .featureContent,
+    .featureVisual {
+        width: 100%;
+    }
+}

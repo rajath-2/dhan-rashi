@@ -1,27 +1,30 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --primary: #1A237E; /* Deep Royal Blue - Trust */
+  --primary-light: #534bae;
+  --secondary: #009688; /* Teal - Calm/Growth */
+  --accent: #FFC107; /* Gold - Wealth */
+  --bg-light: #F8F9FA;
+  --surface: #FFFFFF;
+  --text-main: #121212;
+  --text-muted: #555555;
+  --success: #2E7D32;
+  --danger: #C62828;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 * {
@@ -30,13 +33,22 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  /* Fonts will be set in layout via variables */
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
