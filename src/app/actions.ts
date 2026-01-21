@@ -10,7 +10,16 @@ type FeedbackData = {
     payPreference: string;
 };
 
+const isValidEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
 export async function submitFeedback(data: FeedbackData) {
+    // Validate email if provided
+    if (data.email && !isValidEmail(data.email)) {
+        return { success: false, error: "Invalid email format" };
+    }
+
     const filePath = path.join(process.cwd(), "feedback.csv");
 
     // Create header if file doesn't exist

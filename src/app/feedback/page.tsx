@@ -10,10 +10,20 @@ export default function FeedbackPage() {
   const [rating, setRating] = useState(0);
   const [missingFeature, setMissingFeature] = useState("");
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [payPreference, setPayPreference] = useState("Yes, absolutely!");
+
+  const isValidEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (email && !isValidEmail(email)) {
+      setEmailError("Please enter a valid email address.");
+      return;
+    }
 
     const result = await submitFeedback({
       rating,
@@ -88,10 +98,18 @@ export default function FeedbackPage() {
                     id="email"
                     placeholder="e.g., you@example.com"
                     className={styles.textarea}
-                    style={{ minHeight: 'unset', height: '40px' }} // Quick style fix using existing class
+                    style={{ minHeight: 'unset', height: '40px', borderColor: emailError ? 'red' : 'var(--border)' }}
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (e.target.value && !isValidEmail(e.target.value)) {
+                        setEmailError("Please enter a valid email address.");
+                      } else {
+                        setEmailError("");
+                      }
+                    }}
                   />
+                  {emailError && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '0.25rem' }}>{emailError}</p>}
                 </div>
 
                 <div className={styles.inputGroup}>
